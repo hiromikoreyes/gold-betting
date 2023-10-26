@@ -4,45 +4,38 @@ import React from "react";
 export default function Login(){
 
 
-    let background = document.getElementById("main")
-    let title = document.getElementById("title")
-    let login = document.getElementById("login");
-    let modeDark = false;
-    let sessId = 0;
-
     function darkSite(){
-        let currId = sessId;
 
         //change title
-        title.classList.remove("text-6xl")
-        title.classList.add("text-3xl")
-        title.classList.add("text-white")
+        document.getElementById("title").classList.remove("text-6xl")
+        document.getElementById("title").classList.add("text-3xl")
+        document.getElementById("title").classList.add("text-white")
 
         //change login button
-        login.classList.add("bg-black")
-        login.classList.add("text-white")
+        document.getElementById("login").classList.add("bg-black")
+        document.getElementById("login").classList.add("text-white")
 
         //change background col
-        background.classList.add("bg-black")
-        title.textContent="inspired by my friend"
+        document.getElementById("main").classList.add("bg-black")
+        document.getElementById("title").textContent="inspired by my friend"
 
 
     }
     function normalSite(){
 
         //change title
-        title.textContent="gold betting"
-        title.classList.remove("text-white")
-        title.classList.remove("text-3xl")
-        title.classList.add("text-6xl")
+        document.getElementById("title").textContent="gold betting"
+        document.getElementById("title").classList.remove("text-white")
+        document.getElementById("title").classList.remove("text-3xl")
+        document.getElementById("title").classList.add("text-6xl")
 
 
         //change login button
-        login.classList.remove("bg-black")
-        login.classList.remove("text-white")
+        document.getElementById("login").classList.remove("bg-black")
+        document.getElementById("login").classList.remove("text-white")
 
         //change background col
-        background.classList.remove("bg-black")
+        document.getElementById("main").classList.remove("bg-black")
     }
 
 

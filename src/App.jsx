@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import Login from './components/Login/Login'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <> 
-      <Login/>
+
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<Login/>} />
+      </Routes>
+    </BrowserRouter>
+
     </>
   )
 }

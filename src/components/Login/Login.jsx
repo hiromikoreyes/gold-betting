@@ -1,5 +1,12 @@
 import React from "react";
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, update } from 'firebase/database';
 
+
+
+
+const app = initializeApp(firebaseConfig);  
+const db = getDatabase(app)
 
 export default function Login(){
 
@@ -40,7 +47,11 @@ export default function Login(){
 
 
     function routeAndLogin(){
-        console.log(document.getElementById("username").value)
+        const userName = document.getElementById("username").value;
+        const dbRefUsers = ref(db, 'users');
+        const userObject = {[userName]: "random"}
+        update(dbRefUsers, userObject)
+        console.log(userName)
         location.href="/home/" + document.getElementById("username").value
     }
 
